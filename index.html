@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;400&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 
@@ -16,7 +19,38 @@
         </nav>
     </header>
 
+    <main>
+        <div class="container">
+            <section id="intro">
+                <h1 class="intro-text">Welcome to the Custom Mechanical Keyboard Quiz!</h1>
 
+                <p class="intro-text">Answer the keyboard-related questions within the time limit to see how much you
+                    actually know!</p>
+
+                <button id="start-btn">Click to Start!</button>
+            </section>
+
+
+
+            <div id="quiz-box" class="is-hidden">
+                <p id="question-text">placeholder text for questions</p>
+
+
+                <div>timer
+                    <span id="timer">
+                    </span>
+                </div>
+            </div>
+
+            <div id="choice-box" class="is-hidden">
+                <p>placeholder for answer choices</p>
+            </div>
+
+            <div id="score" class="is-hidden">
+                <p>placeholder for correct or incorrect</p>
+            </div>
+        </div>
+    </main>
 
 
     <script src="script.js"></script>
