@@ -17,6 +17,11 @@ header {
     text-decoration: none;
 }
 
+nav{
+    background-color: #040404;
+    padding-bottom:20px;
+}
+
 nav a {
     letter-spacing: 2px;
     background-color: #040404;
