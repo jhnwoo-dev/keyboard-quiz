@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;400&display=swap" rel="stylesheet">
@@ -50,13 +50,13 @@
 
             <!-- Notification for user to see if answer was correct or incorrect -->
             <div id="score" class="is-hidden">
-                <div id="score-text">Correct/Incorrect?</div>
+                <div id="score-text"></div>
             </div>
 
         </div>
     
 <!-- Post quiz portion is still in progress -->
-    <section id="submissionContainer">
+    <section id="submissionContainer" class="is-hidden">
     <div id="submissionForm">
         <h1 class="highscore-bg">You have completed the quiz!</h1>
         <h3 id="submission-score" class="highscore-bg">placeholder for quiz score display</h3>
@@ -86,7 +86,7 @@
         <button id="clear-scores" class="board-buttons">Reset Scores</button>
     </section>
 </main>
-    <script src="script.js"></script>
+    <script src="assets/script.js"></script>
 </body>
 
 </html>

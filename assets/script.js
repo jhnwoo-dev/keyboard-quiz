@@ -29,7 +29,7 @@ var objArray = [{
     choices: ["Mode Eighty", "Alpine65", "Jelly Epoch", "Mr. Suit"],
     correctChoice: "Jelly Epoch"
 },{
-    question: "What are mandatory in working a keyboard?",
+    question: "What are mandatory in a working keyboard?",
     choices: ["Switches", "PCB", "Stabilizers", "All of the above"],
     correctChoice: "All of the above"
 },{
@@ -59,6 +59,7 @@ function startGame() {
     loadQuestion();
     //Once the first set of questions are loaded and the first answer is selected, eventListeners for the choice buttons will continue the cycle of questions.
 
+
     //Update display of header to the first question number
     currentQuestion++;
     quizHeader.textContent = 'Question: '+ currentQuestion;
@@ -81,7 +82,7 @@ var gameClock = setInterval(function(){
      if(timeLeft <= 0) {
         clearInterval(gameClock);
         endGame();
-        displayScores();
+        // displayScores();
      }
 },1000);
 }
@@ -131,7 +132,7 @@ function checkFinalQuestion(){
     if (currentQuestion === 5){
         clearInterval(gameClock);
         endGame();
-        displayScores();
+        // displayScores();
     }
     else {
         loadQuestion();
@@ -159,13 +160,13 @@ function endGame() {
 
 }
 
-function displayScores() {
+// function displayScores() {
     //TODO: display score after submission of Initials
     //TODO: check local storage for pre-existing
         //if none, create new array
     //TODO: add new score to local storage
     //TODO: compare scores in local storage
-}
+// }
 
 //Event listener for start button
 startButton.addEventListener('click', startGame)
