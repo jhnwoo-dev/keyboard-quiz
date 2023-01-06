@@ -5,6 +5,8 @@ var quizHeader = document.querySelector('h1')
 
 var quizSection = document.getElementById('quiz-box')
 var questionText = document.getElementById('question-text')
+
+
 var timer = document.getElementById('timer')
 
 var scoreEl = document.getElementById('score')
@@ -20,24 +22,24 @@ var choiceFour = document.getElementById('choiceFour')
 //Array of objects that will be used to display information as well as to compare user input to correct answers
 var objArray = [{
     question: "What is the name of the object that is pressed to cause an 'actuation'?",
-    answers: ["Keycap", "Switch", "Button", "Key"],
-    correctIndex: "Switch"
+    choices: ["Keycap", "Switch", "Button", "Key"],
+    correctChoice: "Switch"
 },{
     question: "What was the first board that utilized PE Foam?",
-    answers: ["Mode Eighty", "Alpine65", "Jelly Epoch", "Mr. Suit"],
-    correctIndex: "Jelly Epoch"
+    choices: ["Mode Eighty", "Alpine65", "Jelly Epoch", "Mr. Suit"],
+    correctChoice: "Jelly Epoch"
 },{
     question: "What are mandatory in working a keyboard?",
-    answers: ["Switches", "PCB", "Stabilizers", "All of the above"],
-    correctIndex: "All of the above"
+    choices: ["Switches", "PCB", "Stabilizers", "All of the above"],
+    correctChoice: "All of the above"
 },{
     question: "What may lube be used on in a keyboard?",
-    answers: ["Switches & Stabilizers", "Keycaps", "Hotswap & Solder", "Plate Housing"],
-    correctIndex: "Switches & Stabilizers" 
+    choices: ["Switches & Stabilizers", "Keycaps", "Hotswap & Solder", "Plate Housing"],
+    correctChoice: "Switches & Stabilizers" 
 },{
     question: "What are the letter keys considered?",
-    answers: ["Function Keys", "Base Keys", "Alpha Keys", "Modifier Keys"],
-    correctIndex: "Alpha Keys"  
+    choices: ["Function Keys", "Base Keys", "Alpha Keys", "Modifier Keys"],
+    correctChoice: "Alpha Keys"  
 }]
 
 
@@ -49,17 +51,21 @@ var currentQuestion = 0
 
 
 function startGame() {
-    console.log("Game Start");
+    //Console.log startGame to check if button works
+    console.log('Game Start');
+    //Call startClock to begin timer
     startClock();
+    //Call loadQuestion to load the first question and its associated choices
     loadQuestion();
+    //Once the first set of questions are loaded and the first answer is selected, eventListeners for the choice buttons will continue the cycle of questions.
 
-    //TODO: update display of header to the question number
+    //Update display of header to the first question number
     currentQuestion++;
     quizHeader.textContent = 'Question: '+ currentQuestion;
     
-    //TODO: display quiz section by removing is-hidden class
+    //Displays the quiz content section by removing the 'is-hidden' class
     quizSection.classList.remove('is-hidden');
-    //TODO: display choice section by removing is-hidden class
+    //Displays the choices users can select by removing the 'is-hidden' class
     choiceSection.classList.remove('is-hidden');
     //TODO: display placeholder for correct/incorrect answer by removing is-hidden class
     scoreEl.classList.remove('is-hidden');
@@ -67,7 +73,7 @@ function startGame() {
     startButton.classList.add('is-hidden');
 }
 
-//TODO: create a function that starts timer countdown and call within startButton function
+//Function that starts timer countdown and will be called on eventListener for startButton 
 function startClock(){    
 var gameClock = setInterval(function(){
     timeLeft--;
@@ -84,18 +90,19 @@ var gameClock = setInterval(function(){
 function loadQuestion() {
         //Grabs the question and answers and displays question and answers
     questionText.textContent = objArray[currentQuestion].question;
-    choiceOne.textContent = objArray[currentQuestion].answers[0]
-    choiceTwo.textContent = objArray[currentQuestion].answers[1]
-    choiceThree.textContent = objArray[currentQuestion].answers[2]
-    choiceFour.textContent = objArray[currentQuestion].answers[3]
+    choiceOne.textContent = objArray[currentQuestion].choices[0]
+    choiceTwo.textContent = objArray[currentQuestion].choices[1]
+    choiceThree.textContent = objArray[currentQuestion].choices[2]
+    choiceFour.textContent = objArray[currentQuestion].choices[3]
 }
 //Function that is called when when user selects an answer
 function checkAnswer(event) {
     //Check which button user selected and call function answerCompare to compare user input to the correct answer
     var userChoice = event.target;
-    answerCompare(userChoice.textContent, objArray[currentQuestion].correctIndex);
+    answerCompare(userChoice.textContent, objArray[currentQuestion].correctChoice);
     //Function called to increment currentQuestion and to check if it is the final question
     checkFinalQuestion();
+    console.log(score)
 }
 
 //Function that is used to compare user selected answewr to the correctIndex in objArray 
@@ -132,9 +139,19 @@ function checkFinalQuestion(){
 }
 
 function endGame() {
-    //TODO: hide all prompts and questions
+    //Hide all unnecessary areas to make space for scoreboard
+    var quizContainer = document.getElementById('quiz-container')
+    quizContainer.classList.add('is-hidden');
+    quizSection.classList.add('is-hidden');
+    choiceSection.classList.add('is-hidden');
+    scoreEl.classList.add('is-hidden');
+    startButton.classList.add('is-hidden');
+
     //TODO: stop timer if still running
+    clearInterval(gameClock);
+
     //TODO: display input for user Initials
+
 }
 
 function displayScores() {
@@ -145,12 +162,12 @@ function displayScores() {
     //TODO: compare scores in local storage
 }
 
-//need event listener for start button
+//Event listener for start button
 startButton.addEventListener('click', startGame)
-//event listeners when user selects an answer
+//Event listeners when user selects an answer - will checkAnswer and run through checkpoints
 choiceOne.addEventListener('click', checkAnswer)
 choiceTwo.addEventListener('click',checkAnswer)
 choiceThree.addEventListener('click', checkAnswer)
 choiceFour.addEventListener('click', checkAnswer)
-//event listener for showing highscores
+//Event listener for showing highscores, skipping quiz
 showHighScore.addEventListener('click',displayScores)

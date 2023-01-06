@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;400&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <title>Custom Keyboard Quiz!</title>
 </head>
 
 <body>
@@ -54,9 +54,37 @@
             </div>
 
         </div>
-    </main>
+    
 
+    <section id="submissionContainer">
+    <div id="submissionForm">
+        <h1>You have completed the quiz!</h1>
+        <h3 id="submission-score">placeholder for quiz score display</h3>
 
+        <form>
+            <label for="userName">Enter your initials: </label>
+            <input type="text" id="userInitials" name="userInitials">
+        </form>
+
+        <button id="submit-button">Submit</button>
+    </div>
+    </section>
+
+    <section id="Scoreboard">
+        <!-- Main header for the scoreboard -->
+        <h1>Highscores</h1>
+        <!-- A <ul> to allow user input to be added in JavaScript -->
+        <ul id="scoreboard-items"></ul>
+    </section>
+
+    <section id="scoreboard-buttons">
+        <!-- button to go back to first display -->
+        <a href="index.html">
+            <button class="board-buttons">Go Back</button>
+        </a>
+        <button id="clear-scores" class="board-buttons">Reset Scores</button>
+    </section>
+</main>
     <script src="script.js"></script>
 </body>
 

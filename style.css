@@ -137,6 +137,25 @@ button {
     font-size: 20px;
 }
 
+#submissionContainer{
+    background-color: #8AA1B1;
+    border: 2px solid #040404;
+    border-radius: 18px;
+    margin: 20px;
+    height: 800px;
+    width: 80%;
+}
+
+#submissionForm {
+    text-align: center;
+    margin: 30px 20px 20px 20px;
+    padding: 25px;
+    display: block;
+    text-align: center;
+    height: 150px;
+    border-radius: 18px;
+}
+
 .is-hidden {
     visibility: hidden;
 }
