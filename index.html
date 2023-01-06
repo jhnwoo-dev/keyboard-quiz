@@ -55,12 +55,13 @@
 
         </div>
     
-
+<!-- Post quiz portion is still in progress -->
     <section id="submissionContainer">
     <div id="submissionForm">
-        <h1>You have completed the quiz!</h1>
-        <h3 id="submission-score">placeholder for quiz score display</h3>
+        <h1 class="highscore-bg">You have completed the quiz!</h1>
+        <h3 id="submission-score" class="highscore-bg">placeholder for quiz score display</h3>
 
+        <!-- Form used to collect the user initials -->
         <form>
             <label for="userName">Enter your initials: </label>
             <input type="text" id="userInitials" name="userInitials">
@@ -70,14 +71,14 @@
     </div>
     </section>
 
-    <section id="Scoreboard">
+    <section id="Scoreboard" class="is-hidden">
         <!-- Main header for the scoreboard -->
         <h1>Highscores</h1>
         <!-- A <ul> to allow user input to be added in JavaScript -->
         <ul id="scoreboard-items"></ul>
     </section>
 
-    <section id="scoreboard-buttons">
+    <section id="scoreboard-buttons" class="is-hidden">
         <!-- button to go back to first display -->
         <a href="index.html">
             <button class="board-buttons">Go Back</button>

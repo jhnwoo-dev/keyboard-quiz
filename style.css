@@ -149,11 +149,16 @@ button {
 #submissionForm {
     text-align: center;
     margin: 30px 20px 20px 20px;
-    padding: 25px;
+    padding: 15px;
     display: block;
     text-align: center;
     height: 150px;
     border-radius: 18px;
+    background-color: #8AA1B1;
+}
+/* Highscore section still in-progress */
+#highscore-bg {
+    background-color: #8AA1B1;
 }
 
 .is-hidden {

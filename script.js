@@ -138,6 +138,7 @@ function checkFinalQuestion(){
     }
 }
 
+//Function is still in progress
 function endGame() {
     //Hide all unnecessary areas to make space for scoreboard
     var quizContainer = document.getElementById('quiz-container')
@@ -147,6 +148,10 @@ function endGame() {
     scoreEl.classList.add('is-hidden');
     startButton.classList.add('is-hidden');
 
+    //Display submission page and scoreboard
+    var submissionContainer = document.getElementById('submissionContainer')
+    var submissionForm = document.getElementById('submissionForm')
+    
     //TODO: stop timer if still running
     clearInterval(gameClock);
 
